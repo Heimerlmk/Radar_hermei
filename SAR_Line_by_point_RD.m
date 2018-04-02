@@ -1,7 +1,8 @@
-%%Filename: SAR成像——点目标
+%%Filename: SAR成像——线目标
+%%先执行Line_set设定线段参数，之后再执行本文件。
 %%windows 10, R2016a
 
-clear;clc;close all;
+% clear;clc;close all;
 
 %% 参数设置
 C = 3e8;        %光速
@@ -61,20 +62,20 @@ DY=C/2/Br;                           %距离分辨率
 DX=D/2;                              %方位向分辨率
 
 %%Parameter--point targets
- Ntarget=10;                          %目标点数量
+ Ntarget=point_Num;                          %目标点数量
  %format [x, y, reflectivity]
- Ptarget=[Xmin,Yc,1                  %目标点信息
-          Xmin,Yc+1*DY,1
-          Xmin,Yc+2*DY,1
-          Xmin,Yc+3*DY,1
-          Xmin,Yc+4*DY,1
-          Xmin,Yc+5*DY,1
-          Xmin,Yc+6*DY,1
-          Xmin,Yc+7*DY,1
-          Xmin,Yc+8*DY,1
-          Xmin,Yc+9*DY,1
-%          Xmin+20*DX,Yc+50*DY,1
-          ];  
+%  Ptarget=[Xmin,Yc,1                  %目标点信息
+%           Xmin,Yc+1*DY,1
+%           Xmin,Yc+2*DY,1
+%           Xmin,Yc+3*DY,1
+%           Xmin,Yc+4*DY,1
+%           Xmin,Yc+5*DY,1
+%           Xmin,Yc+6*DY,1
+%           Xmin,Yc+7*DY,1
+%           Xmin,Yc+8*DY,1
+%           Xmin,Yc+9*DY,1
+% %          Xmin+20*DX,Yc+50*DY,1
+%           ];  
 disp('参数:')
 disp('距离向采样倍率');disp(Fsr/Br)
 disp('距离向采样点数');disp(Nfast)
@@ -138,3 +139,6 @@ title('条带SAR距离压缩之后'),
  mesh(abs(Ga));axis tight
  xlabel('距离'),ylabel('方位'),
  title('条带SAR RD 之后'),
+ 
+%成像区间问题，应该做出修改，但大体上以分辨率为单元的成像是没有问题的
+%以分辨率单元的一半成像没有问题
