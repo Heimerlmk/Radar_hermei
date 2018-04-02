@@ -61,19 +61,20 @@ DY=C/2/Br;                           %距离分辨率
 DX=D/2;                              %方位向分辨率
 
 %%Parameter--point targets
- Ntarget=3;                          %目标点数量
+ Ntarget=10;                          %目标点数量
  %format [x, y, reflectivity]
  Ptarget=[Xmin,Yc,1                  %目标点信息
-%           Xmin,Yc+2*DY,1
-%           Xmin,Yc+3*DY,1
-%           Xmin,Yc+4*DY,1
-%           Xmin,Yc+5*DY,1
-%           Xmin,Yc+6*DY,1
-%           Xmin,Yc+7*DY,1
-%           Xmin,Yc+8*DY,1
-%           Xmin,Yc+9*DY,1
-          Xmin,Yc+10*DY,1
-          Xmin+20*DX,Yc+50*DY,1];  
+          Xmin,Yc+1*DY,1
+          Xmin,Yc+2*DY,1
+          Xmin,Yc+3*DY,1
+          Xmin,Yc+4*DY,1
+          Xmin,Yc+5*DY,1
+          Xmin,Yc+6*DY,1
+          Xmin,Yc+7*DY,1
+          Xmin,Yc+8*DY,1
+          Xmin,Yc+9*DY,1
+%          Xmin+20*DX,Yc+50*DY,1
+          ];  
 disp('参数:')
 disp('距离向采样倍率');disp(Fsr/Br)
 disp('距离向采样点数');disp(Nfast)
