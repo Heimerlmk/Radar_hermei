@@ -7,12 +7,12 @@ clc; clear all; close all;
 % y = k*x + b;     %直线
 % plot(y);
 % axis([0 11 0 300]);
-Xmin = -400;
+Xmin = 0;
 Yc   = 10000;
 
-delta_x = 5/4;
-delta_y = 2/4;
-point_Num = 100; 
+delta_x = 5;
+delta_y = 2;
+point_Num = 50; 
 %  Ptarget=[Xmin,Yc,1                  %目标点信息
 %           Xmin,Yc,1                  %
 %           Xmin,Yc,1                  %   
@@ -52,7 +52,7 @@ Ptarget(:,3) = 1;
      
       
 %% 只考虑 y=kx 情形；
-k = 9;
+k = 0;
 dx = 0:delta_x:(point_Num-1) * delta_x;
 dx = dx';
 dy = (k * dx)./delta_x .* delta_y;
