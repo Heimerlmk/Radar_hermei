@@ -10,9 +10,9 @@ clc; clear all; close all;
 Xmin = 0;
 Yc   = 10000;
 
-delta_x = 5;
-delta_y = 2;
-point_Num = 50; 
+delta_x = 5/3;
+delta_y = 2/3;
+point_Num = 100; 
 %  Ptarget=[Xmin,Yc,1                  %目标点信息
 %           Xmin,Yc,1                  %
 %           Xmin,Yc,1                  %   
