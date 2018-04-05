@@ -3,7 +3,6 @@
 %%windows 10, R2016a
 
 % clear;clc;close all;
-
 %% 参数设置
 C = 3e8;        %光速
 fc = 1e9;       %载频1GHz
@@ -33,7 +32,7 @@ ds=PRT;                          %步进时间间隔
                                  
 Nslow=ceil((Xmax-Xmin+Lsar)/V/ds); %回波数量
 Nslow=2^nextpow2(Nslow);           %最终回波数量，2的次幂
-sn=linspace((Xmin-Lsar/2)/V,(Xmax+Lsar/2)/V,Nslow);%步进时间矩阵
+sn=(linspace((Xmin-Lsar/2)/V,(Xmax+Lsar/2)/V,Nslow));%步进时间矩阵
 
 %根据点数更新数据
 PRT=(Xmax-Xmin+Lsar)/V/Nslow;    
@@ -52,7 +51,7 @@ Rmax=sqrt((Yc+Y0)^2+H^2);
 
 Nfast=ceil(2*(Rmax-Rmin)/C/dt+Tr/dt);%距离向采样点数
 Nfast=2^nextpow2(Nfast);             %2次幂
-tm=linspace(2*Rmin/C,2*Rmax/C+Tr,Nfast); %距离向步进时间间隔
+tm=(linspace(2*Rmin/C,2*Rmax/C+Tr,Nfast)); %距离向步进时间间隔
 %根据点数更新数据
 dt=(2*Rmax/C+Tr-2*Rmin/C)/Nfast;    
 Fsr=1/dt;
@@ -91,7 +90,7 @@ K=Ntarget;                                %点数
 N=Nslow;                                  %回波数量
 M=Nfast;                                  %距离向采样点
 T=Ptarget;                                %点位置带入
-Srnm=zeros(N,M);
+Srnm=(zeros(N,M));
 for k=1:1:K
     sigma=T(k,3);
     Dslow=sn*V-T(k,1);
