@@ -8,8 +8,8 @@ Yc   = 10000;           %中心点坐标
 delta_y = 5;            %距离向分辨率
 delta_x = 2;            %方位向分辨率
 
-dx = delta_x;         
-dy = delta_y;         %步进间隔
+dx = delta_x/4;         
+dy = delta_y/4;         %步进间隔
 
 Triangle_length = 50*delta_y;   %三角形边长
 %% 三点坐标
